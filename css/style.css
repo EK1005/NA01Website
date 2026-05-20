@@ -189,3 +189,100 @@ main {
 .details-btn:hover {
     background-color: #374151;
 }
+
+/* Budget Page */
+.budget-page {
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+/* Buttons */
+.period-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.period-buttons button {
+    background-color: #1f2937;
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.period-buttons button:hover {
+    background-color: #374151;
+}
+
+/* Form */
+.budget-form {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 30px;
+}
+
+.budget-form label {
+    margin-bottom: 10px;
+
+    font-weight: bold;
+}
+
+.budget-form input {
+    padding: 14px;
+
+    margin-bottom: 25px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+
+    font-size: 16px;
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #1f2937;
+    color: white;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background-color: #374151;
+}
+
+/* Budget Status */
+.budget-status {
+    margin-top: 40px;
+}
+
+.budget-status h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

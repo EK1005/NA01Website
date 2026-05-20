@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Budget - Energy Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+
+        <div class="logo">
+            <h1>Energy Tracker</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="tips.html">Saving Tips</a></li>
+                <li><a href="budget.html">Budget</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Main -->
+    <main>
+
+        <section class="budget-page">
+
+            <h2>Set Your Budget</h2>
+
+            <!-- Period Buttons -->
+            <div class="period-buttons">
+
+                <button>Weekly</button>
+                <button>Monthly</button>
+
+            </div>
+
+            <!-- Budget Form -->
+            <form class="budget-form">
+
+                <label>Budget Amount ($)</label>
+
+                <input type="number" placeholder="e.g. 400">
+
+                <label>Notify Me When (%)</label>
+
+                <input type="number" placeholder="e.g. 80">
+
+                <button type="submit" class="save-btn">
+                    Save Budget
+                </button>
+
+            </form>
+
+            <!-- Budget Status -->
+            <div class="budget-status">
+
+                <h3>Budget Status</h3>
+
+                <p>Remaining This Week</p>
+
+                <h2>$152 / $400</h2>
+
+                <div class="progress-bar">
+
+                    <div class="progress"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
