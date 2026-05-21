@@ -286,3 +286,159 @@ main {
     margin-top: 10px;
     margin-bottom: 20px;
 }
+
+
+/*History Page Styles (JOE) */
+/* Page Card Container */
+.history-page {
+    background-color: #ffffff; /* White */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: auto;
+}
+
+.section-subtitle {
+    font-size: 12px;
+    font-weight: bold;
+    color: #9ca3af; /* Light Gray */
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+/* Toggle Buttons */
+.history-toggles {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.toggle-btn {
+    background-color: #ffffff; /* White */
+    color: #4b5563; /* Charcoal Gray */
+    border: 2px solid #e5e7eb; /* Soft Gray */
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+    border-color: #60a5fa; /* Sky Blue */
+    color: #2563eb; /* Dark Blue */
+}
+
+.toggle-btn.active {
+    background-color: #1f2937; /* Dark Gray */
+    color: #ffffff; /* White */
+    border-color: #1f2937; /* Dark Gray */
+}
+
+/* Flexbox Bar Chart Architecture */
+.chart-wrapper {
+    background-color: #f9fafb; /* Chart Background Gray */
+    border: 1px solid #e5e7eb; /* Soft Gray */
+    border-radius: 12px;
+    padding: 30px 24px 20px 24px;
+    margin-bottom: 40px;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 180px;
+}
+
+.bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.bar {
+    width: 100%;
+    background-color: #a7f3d0; /* Soft Mint */
+    border-radius: 6px 6px 0 0;
+    transition: height 0.3s ease;
+}
+
+/* Highlighted peak consumption day */
+.bar.highlighted {
+    background-color: #1f2937; /* Dark Gray */
+}
+
+.day-label {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #9ca3af; /* Light Gray */
+    font-weight: bold;
+}
+
+/* Breakdown Lists */
+.breakdown-section h3 {
+    font-size: 12px;
+    color: #9ca3af; /* Light Gray */
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.breakdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.breakdown-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 35%;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Category Legend Mapping */
+.dot.heating-cooling { background-color: #1f2937; /* Dark Gray */ }
+.dot.appliances { background-color: #60a5fa; /* Sky Blue */ }
+.dot.lighting { background-color: #a7f3d0; /* Soft Mint */ }
+
+.breakdown-item .label {
+    font-size: 15px;
+    color: #374151; /* Medium Dark Gray */
+    font-weight: bold;
+}
+
+/* Horizontal Progress Bars */
+.breakdown-progress-bar {
+    width: 60%;
+    height: 14px;
+    background-color: #e5e7eb; /* Soft Gray */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.breakdown-progress {
+    height: 100%;
+    border-radius: 20px;
+}
+
+/* Progress Colors */
+.heating-cooling-bar { background-color: #1f2937; /* Dark Gray */ }
+.appliances-bar { background-color: #60a5fa; /* Sky Blue */ }
+.lighting-bar { background-color: #a7f3d0; /* Soft Mint */ }
+
+/*Joe finish History page*/
