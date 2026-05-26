@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment - Energy Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Energy Tracker</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="tips.html">Saving Tips</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="payment.html">Payment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="payment-page">
+
+            <h2>Pay Your Energy Bill</h2>
+            
+            <div class="payment-summary">
+                <p>Current Outstanding Balance</p>
+                <h3>$152.00</h3>
+            </div>
+
+            <form class="payment-form">
+
+                <label>Cardholder Name</label>
+                <input type="text" placeholder="John Doe" required>
+
+                <label>Card Number</label>
+                <input 
+                    type="text" 
+                    inputmode="numeric" 
+                    maxlength="16" 
+                    placeholder="1234567891011121" 
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
+                    required>
+
+                <div class="form-row">
+                    
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input 
+                            type="text" 
+                            inputmode="numeric" 
+                            maxlength="5" 
+                            placeholder="MM/YY" 
+                            oninput="formatExpiry(this)" 
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input 
+                            type="text" 
+                            inputmode="numeric" 
+                            maxlength="3" 
+                            placeholder="123" 
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
+                            required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="pay-btn">
+                    Submit Payment
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script>
+        function formatExpiry(el) {
+            // Remove any non-numerical characters immediately
+            let cleanInput = el.value.replace(/[^0-9]/g, '');
+            
+            // Only insert the slash once the user starts typing the year (3rd digit)
+            if (cleanInput.length > 2) {
+                el.value = cleanInput.substring(0, 2) + '/' + cleanInput.substring(2, 4);
+            } else {
+                el.value = cleanInput;
+            }
+        }
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

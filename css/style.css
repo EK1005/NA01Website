@@ -294,7 +294,7 @@ main {
     margin-bottom: 20px;
 }
 
-
+/* Below is Joe*/
 /*History Page Styles (JOE) */
 /* Page Card Container */
 .history-page {
@@ -448,4 +448,96 @@ main {
 .appliances-bar { background-color: #60a5fa; /* Sky Blue */ }
 .lighting-bar { background-color: #a7f3d0; /* Soft Mint */ }
 
-/*Joe finish History page*/
+
+/*Payment Page Styles*/
+/* Page Card Container matching Budget page structure */
+.payment-page {
+    background-color: #ffffff; /* White */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Outstanding Balance Display Box */
+.payment-summary {
+    background-color: #f5fffb; /* Soft Mint / Light Background tint */
+    border: 1px solid #b7f4d8; /* Soft Mint border */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.payment-summary p {
+    font-size: 14px;
+    color: #6b7280; /* Muted Text Gray */
+    margin-bottom: 5px;
+}
+
+.payment-summary h3 {
+    font-size: 28px;
+    color: #1f2937; /* Dark Text */
+}
+
+/* Form Structural Layout */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1f2937; /* Dark Text */
+}
+
+.payment-form input {
+    padding: 12px;
+    border: 1px solid #6b7280; /* Muted Text Gray */
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Target Inputs specifically on focus state */
+.payment-form input:focus {
+    border-color: #8ecae6; /* Sky Blue highlight border */
+}
+
+/* Two Column Row Layout for Expiry and CVV fields */
+.form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Action Submit Button */
+.pay-btn {
+    margin-top: 30px;
+    background-color: #1f2937; /* Dark Accent color */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.pay-btn:hover {
+    background-color: #374151; /* Lighter hover gray */
+}
+
+/*Joe finish History and Payment pages*/
