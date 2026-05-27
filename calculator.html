@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator - Energy Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Energy Tracker</h1>
+        </div>
+
+        <nav>
+           <ul>
+                <!-- Set name and href file address to activate navigation
+                  to another created pages -->
+                  
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="tips.html">Saving Tips</a></li>
+                <li><a href="budget.html">Budget</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+           <!-- Set title and description as same as another page -->
+        <section class="calculator-page">
+
+            <h2>Appliance Cost Calculator</h2>
+            <p class="page-description">
+                Estimate how much each appliance costs based on your state electricity rate.
+            </p>
+
+            <!-- Create calculator form for input fileds for calculation-->
+            <form class="calculator-form">
+
+
+                <!--Create conbo box to ask users which state they live in 
+                    because depends on where they are from, the cost of per electricity
+                    will be different -->
+                <label for="state">Select Your State</label>
+                <select id="state">
+                    <option>Queensland - 31.2c/kWh</option>
+                    <option>New South Wales - 32.4c/kWh</option>
+                    <option>Victoria - 29.8c/kWh</option>
+                    <option>South Australia - 38.1c/kWh</option>
+                    <option>Western Australia - 33.6c/kWh</option>
+                    <option>Tasmania - 28.9c/kWh</option>
+                    <option>ACT - 27.4c/kWh</option>
+                </select>
+
+                <!-- In here, at same time, we will add electricity into list
+                     to calculate total amount -->
+                <!--Create electric item name entry form -->
+                <label for="appliance">Appliance Name</label>
+                <input type="text" id="appliance" placeholder="e.g. Air Conditioner">
+
+                <!--create label and input field about power usage-->
+                <label for="power">Power Usage (kW)</label>
+                <input type="number" id="power" placeholder="e.g. 2.0">
+
+                <!--create label and input field about daily hours they used-->
+                <label for="hours">Hours Used Per Day</label>
+                <input type="number" id="hours" placeholder="e.g. 3">
+
+                <div class="button-group">
+
+                    <button type="button" class="save-btn">
+                        Calculate Cost
+                    </button>
+
+                    <button type="button" class="add-btn">
+                        Add Appliance
+                    </button>
+
+                </div>
+            </form>
+
+            <div class="calculation-result">
+
+                <div class="appliance-list">
+
+                    <h3>Your Appliances</h3>
+
+                    <!-- In here write card to display each electric items,
+                    hours they use and weekly or montly cost calculated by 
+                    their daily used.
+                    Copy and paste this card code to add more items -->
+                    <div class="appliance-card">
+
+                        <div>
+                            <h4>Air Conditioner</h4>
+                            <p>3 hours/day</p>
+                        </div>
+
+                        <div>
+                            <h4>$12.60/week</h4>
+                            <p>$54.00/month</p>
+                        </div>
+
+                    </div>
+
+                    <div class="appliance-card">
+
+                        <div>
+                            <h4>Television</h4>
+                            <p>5 hours/day</p>
+                        </div>
+
+                        <div>
+                            <h4>$2.10/week</h4>
+                            <p>$9.00/month</p>
+                        </div>
+        
+
+                    </div>
+
+                    <div class="appliance-card">
+
+                        <div>
+                            <h4>Washing Machine</h4>
+                            <p>1 hour/day</p>
+                        </div>
+
+                    <div>
+                        <h4>$4.10/week</h4>
+                        <p>$17.60/month</p>
+                    </div>
+
+                </div>
+
+            <div class="appliance-card">
+
+                <div>
+                    <h4>Gaming PC</h4>
+                    <p>4 hours/day</p>
+                </div>
+
+                <div>
+                    <h4>$6.80/week</h4>
+                    <p>$29.00/month</p>
+                </div>
+
+
+
+            </div>
+
+            <h3>Estimated Cost</h3>
+
+            <!-- Showing the calculaion result by 3 cards
+                 for per day, per week, and per month-->
+            <div class="result-grid">
+                <div>
+                    <p>Per Day</p>
+                    <h2>$0.00</h2>
+                </div>
+
+                <div>
+                    <p>Per Week</p>
+                    <h2>$0.00</h2>
+                </div>
+
+                <div>
+                    <p>Per Month</p>
+                    <h2>$0.00</h2>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+   
+
+</body>
+</html>

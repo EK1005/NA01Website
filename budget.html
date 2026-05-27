@@ -22,10 +22,15 @@
             <h1>Energy Tracker</h1>
         </div>
 
-        <nav>
-            <ul>
+       <nav>
+           <ul>
+                <!-- Set name and href file address to activate navigation
+                  to another created pages -->
+                  
                 <li><a href="index.html">Dashboard</a></li>
                 <li><a href="history.html">History</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="payment.html">Payment</a></li>
                 <li><a href="tips.html">Saving Tips</a></li>
                 <li><a href="budget.html">Budget</a></li>
             </ul>
@@ -36,11 +41,13 @@
     <!-- Main -->
     <main>
 
+         <!-- Set title and description as same as another page -->
         <section class="budget-page">
 
             <h2>Set Your Budget</h2>
 
-            <!-- Period Buttons -->
+            <!-- Period Buttons. In here, ask user to payment period
+                 weekly or monthly -->
             <div class="period-buttons">
 
                 <button>Weekly</button>
@@ -48,7 +55,9 @@
 
             </div>
 
-            <!-- Budget Form -->
+            <!-- Budget Form. There will be display budget amount, 
+                 amount setting and percentage when spent expencec reach
+                 to user budget.-->
             <form class="budget-form">
 
                 <label>Budget Amount ($)</label>
@@ -74,6 +83,8 @@
 
                 <h2>$152 / $400</h2>
 
+                <!-- Create progress bar as same as dashboard screen.
+                     just copied and pasted-->
                 <div class="progress-bar">
 
                     <div class="progress"></div>

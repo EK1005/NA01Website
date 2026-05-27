@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Details - Energy Tracker</title>
+
+    <!-- Import css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <h1>Energy Tracker</h1>
+        </div>
+
+         <!-- Navigation Bar -->
+        <nav>
+            <ul>
+                <!-- Set name and href file address to activate navigation
+                  to another created pages -->
+                  
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="tips.html">Saving Tips</a></li>
+                <li><a href="budget.html">Budget</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="details-page">
+
+            <!-- Set simply discription of this page-->
+            <h2>Appliance Cost Breakdown</h2>
+
+            <!-- Set specific description of this page -->
+            <p class="page-description">
+                Track the weekly and monthly cost of each appliance in your household.
+            </p>
+
+            <!-- Create grid to display the grid. Use grid in CSS-->
+            <div class="details-grid">
+
+                <!-- Create card to show eeach electricity. 
+                 In this card, write title, hours that electricity used 
+                 and cost information.
+                 Just copy and paste this card to add another electricity -->
+                <div class="details-card">
+
+                    <h3>Air Conditioner</h3>
+
+                    <p>Usage: 3 hours/day</p>
+
+                    <!-- Display cost information in here. Then use span to show 
+                      day, week, month cost-->
+                    <div class="cost-info">
+                        <span>$1.80/day</span>
+                        <span>$12.60/week</span>
+                        <span>$54.00/month</span>
+                    </div>
+
+                </div>
+
+                <div class="details-card">
+
+                    <h3>Refrigerator</h3>
+
+                    <p>Usage: 24 hours/day</p>
+
+                    <div class="cost-info">
+                        <span>$1.35/day</span>
+                        <span>$9.50/week</span>
+                        <span>$41.00/month</span>
+                    </div>
+
+                </div>
+
+                <div class="details-card">
+
+                    <h3>Gaming PC</h3>
+
+                    <p>Usage: 4 hours/day</p>
+
+                    <div class="cost-info">
+                        <span>$0.97/day</span>
+                        <span>$6.80/week</span>
+                        <span>$29.00/month</span>
+                    </div>
+
+                </div>
+
+                <div class="details-card">
+
+                    <h3>Washing Machine</h3>
+
+                    <p>Usage: 1 hour/day</p>
+
+                    <div class="cost-info">
+                        <span>$0.58/day</span>
+                        <span>$4.10/week</span>
+                        <span>$17.60/month</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
