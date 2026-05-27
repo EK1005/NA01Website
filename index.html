@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Energy Usage App</title>
+    <!-- Set the title of this project -->
+    <title>Energy Usage Website </title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -13,60 +14,150 @@
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!--Header part, there will be website name and Navigation bar
+     to navigate user to another pages -->
     <header>
 
+        <!--Set the name of company or website and set class
+         to customise at CSS. We can reuse this header to another page
+         so that copy and paste below at another page when you design-->
         <div class="logo">
             <h1>Energy Tracker</h1>
         </div>
+
+        <!-- Navigation Bar -->
         <nav>
             <ul>
-              <li><a href="index.html">Dashboard</a></li>
-              <li><a href="history.html">History</a></li>
-              <li><a href="tips.html">Saving Tips</a></li>
-              <li><a href="budget.html">Budget</a></li>
-              <li><a href="payment.html">Payment</a></li>
+                <!-- Set name and href file address to activate navigation
+                  to another created pages -->
+                  
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="tips.html">Saving Tips</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="payment.html">Payment</a></li>
             </ul>
         </nav>
 
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content. Create design of Dashboard page in here -->
     <main>
 
+        <!--Wrap this dashboard page by section -->
         <section class="Dashboard">
 
+            <!--Title of this page-->
             <h2>Dashboard</h2>
 
-    <div class="card-container">
+            <!-- Use card container to show the usage card -->
+            <div class="card-container">
 
-        <div class="usage-card">
-            <h3>248 kWh</h3>
-            <p>This Month</p>
-        </div>
+                <!-- Design of usage card 1st for this month-->
+                 <!-- Just copy and paste this copde below if you 
+                  want to add some cards -->
+                <div class="usage-card">
+                    <h3>248 kWh</h3>
+                    <p>This Month</p>
+                </div>
 
-        <div class="usage-card">
-            <h3>310 kWh</h3>
-            <p>Last Month</p>
-        </div>
+                <!-- Design of usage card 1st for last month-->
+                <div class="usage-card">
+                    <h3>310 kWh</h3>
+                    <p>Last Month</p>
+                </div>
 
-    </div>
+            </div>
 
-    <div class="current-usage">
+            <!-- In here, create div to show the circle graph
+              and electric items list -->
+            <div class="dashboard-middle">
 
-        <h3>Current Usage</h3>
+                <!-- At left side, I will show circle graph -->
+                <div class="current-usage">
+                    <h3>Current Usage</h3>
 
-        <div class="circle">
-            <p>62%</p>
-        </div>
+                    <!-- set class name circle to edit this by CSS conic gradient 
+                      to show circle graph-->
+                    <div class="circle">
+                        <p>62%</p>
+                    </div>
+                </div>
 
-    </div>
+                <!-- At right side, display electric items that user registered.
+                  Create registered container to wrap all items up by in one board  -->
+                <div class="registered-board">
+                    <h3>Registered Appliances</h3>
 
+                    <!-- create box to wrap electric item in one box by div-->
+                    <div class="registered-list">
+
+                        <!-- Create each single card and display the name on title 
+                          and how maony hours user used to calculate. Then, if you 
+                          wanna create more examples of electric items, just copy and paste them
+                          into below.  -->
+                        <div class="registered-item">
+                            <div>
+                                <h4>Air Conditioner</h4>
+                                <p>3 hours/day</p>
+                            </div>
+                            <!-- Leave the calculated cost as stgrong word text-->
+                            <strong>$12.60/week</strong>
+                        </div>
+
+                        <div class="registered-item">
+                            <div>
+                                <h4>Refrigerator</h4>
+                                <p>24 hours/day</p>
+                            </div>
+
+                            <strong>$9.50/week</strong>
+                        </div>
+
+                        <div class="registered-item">
+                            <div>
+                                <h4>Gaming PC</h4>
+                                <p>4 hours/day</p>
+                            </div>
+                            <strong>$6.80/week</strong>
+                        </div>
+
+                        <div class="registered-item">
+                            <div>
+                                <h4>Washing Machine</h4>
+                                <p>1 hour/day</p>
+                            </div>
+
+                            <strong>$4.10/week</strong>
+                        </div>
+
+                        <div class="registered-item">
+                            <div>
+                            <h4>Laptop</h4>
+                            <p>6 hours/day</p>
+                        </div>
+
+                        <strong>$3.20/week</strong>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+    <!-- In this section, user's spent expences based on their currrent 
+      electricity usage will be displayed -->
     <div class="budget-section">
 
+        <!-- Set title-->
         <h3>Budget Remaining</h3>
 
+        <!-- set class to design of bar to graphically show 
+          how much user already spend from their budget -->
         <div class="progress-bar">
+            <!-- create class which is progress to show how much user spent -->
+        </div>
             <div class="progress"></div>
         </div>
 
@@ -74,16 +165,14 @@
 
     </div>
 
-    <button class="details-btn">
-        View Details
-    </button>
+    <!-- Set details button to direct to details pages -->
+    <a href="details.html" class="details-btn">
+    View Details
+    </a>
 
         </section>
 
     </main>
-
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
 
 </body>
 
