@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>History - Energy Tracker</title>
 
     <link rel="stylesheet" href="css/style.css">
-</head>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
 <body>
 
     <header>
@@ -17,7 +18,7 @@
             <h1>Energy Tracker</h1>
         </div>
         <nav>
-            <ul>
+             <ul>
                 <li><a href="index.html">Dashboard</a></li>
                 <li><a href="history.html">History</a></li>
                 <li><a href="calculator.html">Calculator</a></li>
@@ -33,58 +34,32 @@
         <section class="history-page">
 
             <p class="section-subtitle">HISTORY</p>
-            <h2>Usage Over Time</h2>
+            <h2 id="history-title">Weekly Usage</h2>
+            <p class="page-description">Track your historical consumption cycles to spot unexpected patterns or spikes.</p>
 
             <div class="history-toggles">
-                <button class="toggle-btn active">Weekly</button>
-                <button class="toggle-btn">Monthly</button>
-                <button class="toggle-btn">Yearly</button>
+                <button class="toggle-btn active" onclick="switchTimeframe('weekly', this)">Weekly</button>
+                <button class="toggle-btn" onclick="switchTimeframe('monthly', this)">Monthly</button>
+                <button class="toggle-btn" onclick="switchTimeframe('yearly', this)">Yearly</button>
             </div>
 
             <div class="chart-wrapper">
-                <div class="bar-chart">
-                    <div class="bar-group">
-                        <div class="bar" style="height: 45%;"></div>
-                        <span class="day-label">M</span>
+                <div class="bar-chart" id="chart-container">
                     </div>
-                    <div class="bar-group">
-                        <div class="bar" style="height: 60%;"></div>
-                        <span class="day-label">T</span>
-                    </div>
-                    <div class="bar-group">
-                        <div class="bar" style="height: 75%;"></div>
-                        <span class="day-label">W</span>
-                    </div>
-                    <div class="bar-group">
-                        <div class="bar" style="height: 50%;"></div>
-                        <span class="day-label">T</span>
-                    </div>
-                    <div class="bar-group">
-                        <div class="bar" style="height: 65%;"></div>
-                        <span class="day-label">F</span>
-                    </div>
-                    <div class="bar-group">
-                        <div class="bar highlighted" style="height: 95%;"></div>
-                        <span class="day-label">S</span>
-                    </div>
-                    <div class="bar-group">
-                        <div class="bar" style="height: 55%;"></div>
-                        <span class="day-label">S</span>
-                    </div>
-                </div>
             </div>
 
             <div class="breakdown-section">
                 
-                <h3>BREAKDOWN</h3>
+                <h3>ENERGY BREAKDOWN</h3>
 
                 <div class="breakdown-item">
                     <div class="breakdown-info">
                         <span class="dot heating-cooling"></span>
                         <span class="label">Heating/Cooling</span>
                     </div>
-                    <div class="breakdown-progress-bar">
-                        <div class="breakdown-progress heating-cooling-bar" style="width: 65%;"></div>
+                    <div class="breakdown-progress-container">
+                        <div class="breakdown-progress-bar" id="bar-heating" style="width: 65%;"></div>
+                        <span class="breakdown-percentage" id="text-heating">65%</span>
                     </div>
                 </div>
 
@@ -93,8 +68,9 @@
                         <span class="dot appliances"></span>
                         <span class="label">Appliances</span>
                     </div>
-                    <div class="breakdown-progress-bar">
-                        <div class="breakdown-progress appliances-bar" style="width: 40%;"></div>
+                    <div class="breakdown-progress-container">
+                        <div class="breakdown-progress-bar" id="bar-appliances" style="width: 40%;"></div>
+                        <span class="breakdown-percentage" id="text-appliances">40%</span>
                     </div>
                 </div>
 
@@ -103,8 +79,9 @@
                         <span class="dot lighting"></span>
                         <span class="label">Lighting</span>
                     </div>
-                    <div class="breakdown-progress-bar">
-                        <div class="breakdown-progress lighting-bar" style="width: 20%;"></div>
+                    <div class="breakdown-progress-container">
+                        <div class="breakdown-progress-bar" id="bar-lighting" style="width: 20%;"></div>
+                        <span class="breakdown-percentage" id="text-lighting">20%</span>
                     </div>
                 </div>
 
@@ -114,8 +91,103 @@
 
     </main>
 
+    <script>
+        // Data Repository for all views
+        const historyData = {
+            weekly: {
+                title: "Weekly Usage",
+                breakdown: { heating: 65, appliances: 40, lighting: 20 },
+                chart: [
+                    { label: "M", value: 45, peak: false },
+                    { label: "T", value: 60, peak: false },
+                    { label: "W", value: 75, peak: false },
+                    { label: "T", value: 50, peak: false },
+                    { label: "F", value: 65, peak: false },
+                    { label: "S", value: 95, peak: true }, // Highlighted Saturday spike
+                    { label: "S", value: 55, peak: false }
+                ]
+            },
+            monthly: {
+                title: "Monthly Usage",
+                breakdown: { heating: 50, appliances: 55, lighting: 15 },
+                chart: [
+                    { label: "Wk 1", value: 70, peak: false },
+                    { label: "Wk 2", value: 85, peak: true }, // Highlighted peak week
+                    { label: "Wk 3", value: 60, peak: false },
+                    { label: "Wk 4", value: 65, peak: false }
+                ]
+            },
+            yearly: {
+                title: "Yearly Usage",
+                breakdown: { heating: 75, appliances: 35, lighting: 10 },
+                chart: [
+                    { label: "Q1", value: 80, peak: false },
+                    { label: "Q2", value: 90, peak: true }, // Summer/Winter peak climate spikes
+                    { label: "Q3", value: 55, peak: false },
+                    { label: "Q4", value: 70, peak: false }
+                ]
+            }
+        };
+
+        // Render function
+        function switchTimeframe(type, clickedButton) {
+            // 1. Manage Active Button Appearance States
+            const buttons = document.querySelectorAll('.toggle-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            clickedButton.classList.add('active');
+
+            // 2. Extract Dataset
+            const data = historyData[type];
+
+            // 3. Update Text Content
+            document.getElementById('history-title').innerText = data.title;
+
+            // 4. Update Progress Bars & Label Percentage Texts
+            document.getElementById('bar-heating').style.width = data.breakdown.heating + '%';
+            document.getElementById('text-heating').innerText = data.breakdown.heating + '%';
+
+            document.getElementById('bar-appliances').style.width = data.breakdown.appliances + '%';
+            document.getElementById('text-appliances').innerText = data.breakdown.appliances + '%';
+
+            document.getElementById('bar-lighting').style.width = data.breakdown.lighting + '%';
+            document.getElementById('text-lighting').innerText = data.breakdown.lighting + '%';
+
+            // 5. Generate and Append New Graph Bars
+            const chartContainer = document.getElementById('chart-container');
+            chartContainer.innerHTML = ''; // Wipe existing structures
+
+            data.chart.forEach(barInfo => {
+                // Create bar structural group
+                const barGroup = document.createElement('div');
+                barGroup.className = 'bar-group';
+                
+                // Add explicit spacing width scaling depending on bar counts
+                barGroup.style.width = (100 / data.chart.length) - 4 + '%';
+
+                // Build the bar item
+                const barItem = document.createElement('div');
+                barItem.className = barInfo.peak ? 'bar highlighted' : 'bar';
+                barItem.style.height = barInfo.value + '%';
+
+                // Build label
+                const labelItem = document.createElement('span');
+                labelItem.className = 'day-label';
+                labelItem.innerText = barInfo.label;
+
+                // Bind elements together
+                barGroup.appendChild(barItem);
+                barGroup.appendChild(labelItem);
+                chartContainer.appendChild(barGroup);
+            });
+        }
+
+        // Initialize display set to weekly on startup loading loops
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultBtn = document.querySelector('.toggle-btn');
+            switchTimeframe('weekly', defaultBtn);
+        });
+    </script>
     <script src="js/script.js"></script>
 
 </body>
-
 </html>
