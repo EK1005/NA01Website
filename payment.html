@@ -14,7 +14,8 @@
 <body>
 
     <header>
-        <div class="logo">
+         <div class="logo">
+            <img src="images/logo.png" alt="Energy Tracker Logo">
             <h1>Energy Tracker</h1>
         </div>
         <nav>
@@ -25,6 +26,7 @@
                 <li><a href="tips.html">Saving Tips</a></li>
                 <li><a href="budget.html">Budget</a></li>
                 <li><a href="payment.html">Payment</a></li>
+                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -34,9 +36,13 @@
         <section class="payment-page">
 
             <h2>Pay Your Energy Bill</h2>
-            
+            <!--In this div, set design of payment
+                Left side will be bill, Right side will be 
+                payment form-->
             <div class="payment-layout">
-                
+                <!-- Left side design
+                     Set summary of amount, due date,
+                     Payment info. Status -->
                 <div class="payment-card">
                     <h3>Account Summary</h3>
                     <div class="bill-amount">$152.00</div>
@@ -56,6 +62,9 @@
                     </div>
                 </div>
 
+                <!-- In this side will be payment design.
+                     set payment Name and Number entry,
+                     Expiry date and CVV number -->
                 <form class="payment-form">
                     
                     <h3>Payment Method</h3>
@@ -110,10 +119,14 @@
 
     </main>
 
+    
     <script>
+        //In this JavaScript, set easy validation for payment information.
         function formatExpiry(el) {
+            //just allow only number 
             let cleanInput = el.value.replace(/[^0-9]/g, '');
             if (cleanInput.length > 2) {
+                //This is for card expiry number for MM/YY
                 el.value = cleanInput.substring(0, 2) + '/' + cleanInput.substring(2, 4);
             } else {
                 el.value = cleanInput;

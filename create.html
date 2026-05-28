@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Energy Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Energy Tracker Logo">
+            <h1>Energy Tracker</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="tips.html">Saving Tips</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Create Account Content. Just same design with login page.
+         just add first name, last name and confirmation password 
+         labels and text booxes -->
+    <main>
+        <section class="login-page">
+
+            <div class="login-card">
+
+                <h2>Create Account</h2>
+
+                <p class="page-description">
+                    Create an account to save your energy usage, appliance costs, and budget settings.
+                </p>
+
+                <!-- Create Account Form -->
+                <form class="login-form">
+
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="e.g. Ikkei" required>
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="e.g. Fukuta" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="e.g. user@email.com" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+
+                    <button type="submit" class="login-btn">
+                        Create Account
+                    </button>
+
+                </form>
+
+                <p class="login-note">
+                    Already have an account? <a href="login.html">Login here</a>
+                </p>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

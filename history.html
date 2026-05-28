@@ -15,6 +15,7 @@
 
     <header>
         <div class="logo">
+            <img src="images/logo.png" alt="Energy Tracker Logo">
             <h1>Energy Tracker</h1>
         </div>
         <nav>
@@ -25,6 +26,7 @@
                 <li><a href="tips.html">Saving Tips</a></li>
                 <li><a href="budget.html">Budget</a></li>
                 <li><a href="payment.html">Payment</a></li>
+                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -32,27 +34,36 @@
     <main>
 
         <section class="history-page">
-
+            <!--Set subtitle in here to show history page-->
             <p class="section-subtitle">HISTORY</p>
+            <!--Set weekly usage label. By using easy JavaScript,
+                we make button to switch monthly and yearly, then reflect label-->
             <h2 id="history-title">Weekly Usage</h2>
             <p class="page-description">Track your historical consumption cycles to spot unexpected patterns or spikes.</p>
 
+            <!--Set three buttons that let users to change the graph weekly, monthly and yearly-->
             <div class="history-toggles">
                 <button class="toggle-btn active" onclick="switchTimeframe('weekly', this)">Weekly</button>
                 <button class="toggle-btn" onclick="switchTimeframe('monthly', this)">Monthly</button>
                 <button class="toggle-btn" onclick="switchTimeframe('yearly', this)">Yearly</button>
             </div>
-
+            <!--Here will be the location where graph will be shown.
+                We will develop graph in here automatically so let this
+                container empty-->
             <div class="chart-wrapper">
                 <div class="bar-chart" id="chart-container">
                     </div>
             </div>
 
+            <!--In this div, we will make displaying heating / coling
+                Appliance, and Lighting -->
             <div class="breakdown-section">
                 
                 <h3>ENERGY BREAKDOWN</h3>
 
                 <div class="breakdown-item">
+                    <!--One categrory display in here. Just copy and pasye these two below
+                        if you want to add some more -->
                     <div class="breakdown-info">
                         <span class="dot heating-cooling"></span>
                         <span class="label">Heating/Cooling</span>
