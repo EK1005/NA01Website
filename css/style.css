@@ -13,7 +13,7 @@
     --muted-text: #6b7280;
 }
 
-/* Set size of browaer in here to prevent bug or du=ifference
+/* Set size of browser in here to prevent bug or du=ifference
  of layout on each pages  */
 * {
     margin: 0;
@@ -100,7 +100,7 @@ nav a:hover {
 
 /* Here is inside of bar. it is skybuue  */
 .progress {
-    width: 62%;
+    width: 40%;
     height: 100%;
     background-color: var(--sky-blue);
 }

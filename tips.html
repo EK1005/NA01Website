@@ -1,25 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saving Tips - Energy Tracker</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy Tracker - Saving Tips</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<style>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f8f9fa;
+    color:#2c3e50;
+}
+
+/* Header */
+
+
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+}
+
+
+
+nav a:hover{
+    color:white;
+}
+
+/* Main */
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.page-title{
+    margin-bottom:30px;
+}
+
+/* Tip of Day */
+
+.tip-day{
+    background:#2c3e50;
+    color:white;
+    padding:30px;
+    border-radius:15px;
+    margin-bottom:40px;
+}
+
+.tip-day h2{
+    margin-bottom:10px;
+}
+
+/* Cards */
+
+.tips-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.tip-card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    display:flex;
+    align-items:center;
+    gap:15px;
+    transition:0.3s;
+}
+
+.tip-card:hover{
+    transform:translateY(-5px);
+}
+
+.circle{
+    width:50px;
+    height:50px;
+    background:#a8f0d4;
+    border-radius:50%;
+    flex-shrink:0;
+}
+
+.tip-card p{
+    font-size:16px;
+    font-weight:500;
+}
+
+/* Challenge Section */
+
+.challenge{
+    margin-top:50px;
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.challenge h2{
+    margin-bottom:15px;
+}
+
+
+
+.challenge li{
+    margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+    margin-top:50px;
+    background:#8fd3ff;
+    text-align:center;
+    padding:20px;
+    font-weight:bold;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .tips-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+    align-items: center;
+    }
+
+    .tips-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
+<header>
+<!--Set the name of company or website and set class
+         to customise at CSS. We can reuse this header to another page
+         so that copy and paste below at another page when you design-->
         <div class="logo">
             <img src="images/logo.png" alt="Energy Tracker Logo">
             <h1>Energy Tracker</h1>
         </div>
-        <nav>
-             <ul>
+
+<nav>
+        <ul>
+                <!-- Set name and href file address to activate navigation
+                  to another created pages -->
+                  
                 <li><a href="index.html">Dashboard</a></li>
                 <li><a href="history.html">History</a></li>
                 <li><a href="calculator.html">Calculator</a></li>
@@ -27,76 +184,91 @@
                 <li><a href="budget.html">Budget</a></li>
                 <li><a href="payment.html">Payment</a></li>
                  <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+        </ul>
+</nav>
 
-    <main>
+</header>
 
-        <section class="tips-page">
+<div class="container">
 
-            <h2>Energy Saving Tips</h2>
-            <p class="page-description">Simple, practical ways to reduce your household electricity consumption without getting overwhelmed.</p>
-            
-            <!--Make parent to display the Tips Card -->
-            <div class="tips-grid">
-                <!--Make card and show one tips in this. 
-                    Just copy this dive and inside of code to 
-                    make another one if you want -->
-                <div class="tips-card cooling">
-                    <div class="tips-header">
-                        <span class="tips-badge">Heating & Cooling</span>
-                    </div>
-                    <h3>Optimize Your Thermostat</h3>
-                    <p>Setting your air conditioner just 1°C warmer in summer (or cooler in winter) can reduce your running costs by up to 10%.</p>
-                </div>
+<h1 class="page-title">Saving Tips</h1>
 
-                <div class="tips-card appliances">
-                    <div class="tips-header">
-                        <span class="tips-badge">Appliances</span>
-                    </div>
-                    <h3>Wash with Cold Water</h3>
-                    <p>About 80-90% of the energy your washing machine uses goes entirely into heating the water. Switching to cold cycles saves significantly over time.</p>
-                </div>
+<div class="tip-day">
+<h2>Tip of the Day</h2>
+<p>
+Turn off appliances at the wall when not in use.
+This reduces standby power and lowers electricity costs.
+</p>
+</div>
 
-                <div class="tips-card lighting">
-                    <div class="tips-header">
-                        <span class="tips-badge">Lighting</span>
-                    </div>
-                    <h3>Switch to LED Bulbs</h3>
-                    <p>LEDs use roughly 75% less energy and last up to 25 times longer than traditional incandescent lightbulbs.</p>
-                </div>
+<div class="tips-grid">
 
-                <div class="tips-card standby">
-                    <div class="tips-header">
-                        <span class="tips-badge">Standby Power</span>
-                    </div>
-                    <h3>Turn Off Standby Devices</h3>
-                    <p>Appliances left on standby (like gaming consoles, TVs, and microwave clocks) account for roughly 10% of household energy usage.</p>
-                </div>
+<div class="tip-card">
+<div class="circle"></div>
+<p>Use LED bulbs instead of incandescent bulbs.</p>
+</div>
 
-                <div class="tips-card kitchen">
-                    <div class="tips-header">
-                        <span class="tips-badge">Kitchen</span>
-                    </div>
-                    <h3>Check Fridge Seals</h3>
-                    <p>Ensure your refrigerator doors seal tightly. A faulty door seal allows cold air to escape, forcing the compressor to work overtime.</p>
-                </div>
+<div class="tip-card">
+<div class="circle"></div>
+<p>Wash clothes in cold water whenever possible.</p>
+</div>
 
-                <div class="tips-card insulation">
-                    <div class="tips-header">
-                        <span class="tips-badge">Insulation</span>
-                    </div>
-                    <h3>Seal Up Draft Cracks</h3>
-                    <p>Keep windows and external doors tightly sealed using draft stoppers to lock down your climate control without wasting power.</p>
-                </div>
+<div class="tip-card">
+<div class="circle"></div>
+<p>Set air conditioning to 24°C during summer.</p>
+</div>
 
-            </div>
+<div class="tip-card">
+<div class="circle"></div>
+<p>Only run your dishwasher when it is full.</p>
+</div>
 
-        </section>
+<div class="tip-card">
+<div class="circle"></div>
+<p>Unplug chargers when they are not being used.</p>
+</div>
 
-    </main>
+<div class="tip-card">
+<div class="circle"></div>
+<p>Open curtains during the day to use natural light.</p>
+</div>
 
-    <script src="js/script.js"></script>
+<div class="tip-card">
+<div class="circle"></div>
+<p>Turn lights off when leaving a room.</p>
+</div>
+
+<div class="tip-card">
+<div class="circle"></div>
+<p>Use ceiling fans before turning on air conditioning.</p>
+</div>
+
+<div class="tip-card">
+<div class="circle"></div>
+<p>Keep refrigerator doors closed as much as possible.</p>
+</div>
+
+</div>
+
+<div class="challenge">
+
+<h2>Weekly Energy Saving Challenge</h2>
+
+<ul>
+<li>Turn off lights when leaving a room.</li>
+<li>Reduce shower time by 2 minutes.</li>
+<li>Use fans before air conditioning.</li>
+<li>Track your electricity usage every day.</li>
+<li>Unplug devices that are not being used.</li>
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Energy Tracker | Saving Tips Page
+</footer>
+
 </body>
 </html>
